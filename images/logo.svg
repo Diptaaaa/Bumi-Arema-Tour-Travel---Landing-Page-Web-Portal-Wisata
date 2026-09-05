@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Mark -->
+  <g transform="translate(10, 8)">
+    <!-- Badge Background circle -->
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="url(#logoGrad)" />
+    
+    <!-- Rising Sun behind mountains -->
+    <circle cx="32" cy="28" r="14" fill="url(#sunGrad)" opacity="0.9" />
+    
+    <!-- Mountain Peaks -->
+    <!-- Back Mountain -->
+    <polygon points="12,50 32,24 52,50" fill="#0369a1" opacity="0.6" />
+    <!-- Front Mountain 1 (Bromo shape) -->
+    <polygon points="16,52 32,32 44,52" fill="#0f172a" />
+    <polygon points="28,37 32,32 36,37" fill="#ffffff" opacity="0.8" />
+    <!-- Front Mountain 2 (Semeru peak) -->
+    <polygon points="30,52 46,26 58,52" fill="#1e293b" />
+    <polygon points="42,32 46,26 50,32" fill="#ffffff" opacity="0.9" />
+
+    <!-- Compass / Path swoosh -->
+    <path d="M12,46 Q32,54 52,44" stroke="#fbbf24" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    
+    <!-- Sparkle / Star -->
+    <polygon points="46,14 48,18 52,20 48,22 46,26 44,22 40,20 44,18" fill="#ffffff" />
+  </g>
+
+  <!-- Logo Text -->
+  <g transform="translate(86, 26)">
+    <text x="0" y="16" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="800" fill="#0f172a" letter-spacing="-0.5">
+      BUMI<tspan fill="#0284c7">AREMA</tspan>
+    </text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#0d9488" letter-spacing="2.5">
+      TOUR &amp; TRAVEL JATIM
+    </text>
+  </g>
+</svg>

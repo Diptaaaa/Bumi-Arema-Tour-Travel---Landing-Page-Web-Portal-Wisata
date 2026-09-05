@@ -1,0 +1,767 @@
+/* ==========================================================================
+   Bumi Arema Tour & Travel - Master Stylesheet (style.css)
+   Complies with Coursera Front-End Assessment Criteria
+   Layout: Flexbox & CSS Grid
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Variables) & Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --color-primary: #0f766e;        /* Deep Emerald Teal */
+  --color-primary-dark: #115e59;
+  --color-primary-light: #14b8a6;
+  --color-accent: #f59e0b;         /* Sunrise Amber / Gold */
+  --color-accent-hover: #d97706;
+  --color-sky: #0284c7;            /* Azure / Bromo Sky Blue */
+  --color-dark: #0f172a;           /* Slate Navy */
+  --color-text-main: #334155;      /* Slate text */
+  --color-text-muted: #64748b;     /* Muted secondary text */
+  --color-bg-light: #f8fafc;       /* Clean subtle off-white background */
+  --color-white: #ffffff;
+  --color-card-border: #e2e8f0;
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 25px -5px rgba(15, 118, 110, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   3. Header Element: Logo Section (Flexbox)
+   -------------------------------------------------------------------------- */
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 20;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-block;
+  transition: transform var(--transition-normal), opacity var(--transition-fast);
+}
+
+.logo-link:hover {
+  transform: translateY(-1px) scale(1.02);
+  opacity: 0.95;
+}
+
+.logo-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.site-logo {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   4. Nav Element: Horizontal Menu (Flexbox with 4 links)
+   -------------------------------------------------------------------------- */
+.main-nav {
+  background: linear-gradient(90deg, #094a44 0%, var(--color-primary) 50%, #0369a1 100%);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  display: inline-flex;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 1rem 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  position: relative;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Animated Underline Effect on Nav Link Hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   5. Main Element & Promotional Banner
+   -------------------------------------------------------------------------- */
+.site-main {
+  display: block;
+}
+
+/* Hero Promotional Banner */
+.promo-banner {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('images/hero-promo.jpg') no-repeat center center / cover;
+  padding: 5rem 1.5rem;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* Gradient Overlay for high text readability */
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.85) 100%);
+  backdrop-filter: blur(1px);
+}
+
+.promo-content {
+  position: relative;
+  z-index: 10;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.promo-badge {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.8);
+  color: #fef08a;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.promo-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.promo-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.promo-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons Styling & Hover Effects */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.85rem;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  color: var(--color-dark);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   6. 3-Column Destinations Section (CSS Grid / Flexbox)
+   -------------------------------------------------------------------------- */
+.destinations-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* 3-Column Grid Container */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Destination Card Component */
+.destination-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-fast);
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary-light);
+}
+
+/* Card Image & Zoom Effect */
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 230px;
+  background-color: #cbd5e1;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.destination-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+.card-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(15, 23, 42, 0.78);
+  color: #fef08a;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* Card Content Body */
+.card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 0.85rem;
+  line-height: 1.35;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.meta-duration {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.meta-price {
+  color: var(--color-primary-dark);
+  font-size: 0.92rem;
+}
+
+.meta-price strong {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  margin-top: auto;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card-link:hover {
+  color: var(--color-accent-hover);
+  transform: translateX(4px);
+}
+
+.card-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   7. Value Proposition & Features Section (Flexbox)
+   -------------------------------------------------------------------------- */
+.features-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-card-border);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: 3rem 1.5rem;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.feature-icon {
+  font-size: 2.25rem;
+  background: var(--color-bg-light);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-content h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 0.35rem;
+}
+
+.feature-content p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   8. Contact CTA Section
+   -------------------------------------------------------------------------- */
+.contact-cta-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.contact-cta-card {
+  background: linear-gradient(135deg, #094a44 0%, var(--color-primary) 60%, #0284c7 100%);
+  color: var(--color-white);
+  padding: 3.5rem 2.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-cta-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.contact-cta-card p {
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  color: #e2e8f0;
+}
+
+.contact-info-pills {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-info-pills .pill {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.contact-info-pills .pill:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer Element: Two Columns (Coursera Requirement)
+   Column 1: Smaller Version of Client Logo
+   Column 2: Copywriting & Legal Information
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-dark);
+  color: #94a3b8;
+  padding: 4rem 1.5rem 3rem;
+  border-top: 4px solid var(--color-primary);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Left Column: Smaller Logo & Tagline */
+.footer-col-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  width: fit-content;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-logo-link:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.footer-logo-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.footer-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  max-width: 320px;
+  line-height: 1.55;
+}
+
+/* Right Column: Copyright & Info */
+.footer-col-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 2.5rem;
+}
+
+.copyright-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.copyright-legal {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Design (@media queries)
+   -------------------------------------------------------------------------- */
+/* Tablet Breakpoint */
+@media screen and (max-width: 992px) {
+  .promo-title {
+    font-size: 2.25rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destinations-grid .destination-card:last-child {
+    grid-column: span 2;
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-col-copyright {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 640px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .site-logo {
+    height: 48px;
+  }
+
+  .nav-menu {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .promo-banner {
+    padding: 3.5rem 1rem;
+    min-height: 420px;
+  }
+
+  .promo-title {
+    font-size: 1.75rem;
+  }
+
+  .promo-description {
+    font-size: 0.98rem;
+  }
+
+  .promo-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .destinations-section {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destinations-grid .destination-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .contact-cta-card {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .contact-cta-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info-pills {
+    flex-direction: column;
+  }
+
+  .contact-info-pills .pill {
+    width: 100%;
+  }
+}

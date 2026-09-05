@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="100%" height="100%">
+  <!-- Little Lemon Icon -->
+  <g transform="translate(10, 5)">
+    <!-- Lemon Body -->
+    <path d="M 65,15 C 95,20 105,55 98,80 C 90,105 60,110 40,105 C 20,100 12,70 18,45 C 24,20 45,12 65,15 Z" fill="#495E57" />
+    <!-- Leaf -->
+    <path d="M 50,22 C 45,8 55,2 62,2 C 64,12 58,18 50,22 Z" fill="#495E57" />
+    <!-- Leaf highlight / cut line -->
+    <path d="M 54,6 Q 52,14 48,22" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" />
+    <!-- Stylized internal curve on lemon -->
+    <path d="M 45,28 C 32,45 32,70 42,88 C 45,93 50,96 55,98" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85" />
+    <path d="M 50,42 C 42,55 42,72 48,82" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.75" />
+  </g>
+  <!-- Little Lemon Typography -->
+  <text x="130" y="70" font-family="'Markazi Text', 'Georgia', serif" font-size="44" font-weight="700" letter-spacing="6" fill="#495E57">LITTLE LEMON</text>
+</svg>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Little Lemon is a charming Mediterranean restaurant in Chicago serving traditional family recipes with a modern twist. Reserve your table, view our artisanal menu, and claim your 30% weekend offer.">
+  <meta name="author" content="Little Lemon Restaurant">
+  <meta name="keywords" content="Little Lemon, Mediterranean Restaurant, Italian Cuisine, Table Reservation, Chicago Restaurant, Food Menu">
+  <title>Little Lemon | Traditional Mediterranean Restaurant & Bar</title>
+
+  <!-- Google Fonts: Markazi Text & Karla -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Markazi+Text:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Page Container -->
+  <div class="page-container">
+
+    <!-- ====================================================================
+         1. HEADER: Client Logo & Horizontal Navigation (Semantic Header)
+         ==================================================================== -->
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link" aria-label="Little Lemon Home">
+          <img src="images/logo.svg" alt="Little Lemon Restaurant Logo" class="header-logo">
+        </a>
+      </div>
+
+      <!-- Horizontal Navigation Menu with 4 Links -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#menu-catalog" class="nav-link">Menu</a></li>
+          <li class="nav-item"><a href="#book" class="nav-link nav-book-btn" data-action="open-reservation">Book a Table</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Quick Cart Counter Badge -->
+        <div class="header-cart" title="Your Orders">
+          <span class="cart-icon">🛒</span>
+          <span id="cart-count" class="cart-badge">0</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ====================================================================
+         2. MAIN CONTENT (Semantic Main)
+         ==================================================================== -->
+    <main class="main-content">
+
+      <!-- Large Promotional Banner (Coursera Requirement) -->
+      <section class="promo-banner" aria-labelledby="promo-title">
+        <div class="promo-content">
+          <div class="promo-tag">Special Celebration</div>
+          <h1 id="promo-title">30% Off This Weekend</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris. 
+            Fusce dapibus vehicula ex at ultrices. Duis at varius ligula. Integer pulvinar tempus quam, et consequat 
+            nulla viverra in. Nullam ut tortor magna. Nulla eget placerat leo. Nunc eu finibus magna, sed vulputate magna.
+          </p>
+          <div class="promo-actions">
+            <button class="btn btn-primary" data-action="open-reservation">Reserve a Table</button>
+            <a href="#menu-catalog" class="btn btn-secondary">Explore Menu</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Three-Column Content Section (Coursera Requirement) -->
+      <section class="features-section" aria-label="Restaurant Highlights">
+        <div class="features-grid">
+
+          <!-- Column 1: Our New Menu -->
+          <article class="feature-card" id="menu">
+            <div class="card-header-row">
+              <h2 class="card-title">Our New Menu</h2>
+              <span class="card-badge">Seasonal</span>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="images/skewers.jpg" alt="Artisan grilled chicken skewers on charcoal grill" class="card-image" loading="lazy">
+            </div>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris. 
+              Fusce dapibus vehicula ex at ultrices. Duis at varius ligula. Integer pulvinar tempus quam, et consequat 
+              nulla viverra in. Nullam ut tortor magna. Nulla eget placerat leo. Nunc eu finibus magna, sed vulputate magna.
+            </p>
+            <a href="#menu-catalog" class="card-action-link">See our new menu &darr;</a>
+          </article>
+
+          <!-- Column 2: Book a table -->
+          <article class="feature-card" id="book-card">
+            <div class="card-header-row">
+              <h2 class="card-title">Book a table</h2>
+              <span class="card-badge highlight">Fast Booking</span>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="images/salad.jpg" alt="Fresh Mediterranean salad with lemon dressing" class="card-image" loading="lazy">
+            </div>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris. 
+              Fusce dapibus vehicula ex at ultrices. Duis at varius ligula. Integer pulvinar tempus quam, et consequat 
+              nulla viverra in. Nullam ut tortor magna. Nulla eget placerat leo. Nunc eu finibus magna, sed vulputate magna.
+            </p>
+            <button type="button" class="card-action-btn" data-action="open-reservation">Book your table now &rarr;</button>
+          </article>
+
+          <!-- Column 3: Opening Hours -->
+          <article class="feature-card" id="hours-card">
+            <div class="card-header-row">
+              <h2 class="card-title">Opening Hours</h2>
+              <!-- Dynamic Real-time Status Badge -->
+              <div id="live-status-badge" class="status-badge status-open">
+                <span class="pulse-dot"></span> Checking Status...
+              </div>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="images/chef.jpg" alt="Chef Maria garnishing gourmet dish in artisan kitchen" class="card-image" loading="lazy">
+            </div>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris. 
+              Fusce dapibus vehicula ex at ultrices.
+            </p>
+            <div class="opening-hours-table">
+              <p class="hours-row"><span class="day">Mon - Fri:</span> <span class="time">2pm - 10pm</span></p>
+              <p class="hours-row"><span class="day">Sat:</span> <span class="time">2pm - 11pm</span></p>
+              <p class="hours-row"><span class="day">Sun:</span> <span class="time">2pm - 9pm</span></p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           3. INTERACTIVE SECTION: Menu Catalog & Categories Filter
+           ================================================================== -->
+      <section class="menu-catalog-section" id="menu-catalog" aria-labelledby="catalog-heading">
+        <div class="section-title-wrapper">
+          <span class="sub-heading">Fresh &amp; Authentic</span>
+          <h2 id="catalog-heading" class="section-main-heading">Explore Our Artisanal Dishes</h2>
+          <p class="section-subtext">Each recipe has been perfected with love, using hand-selected Mediterranean ingredients and organic citrus.</p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-chips-container" role="tablist" aria-label="Menu Categories">
+          <button type="button" class="filter-chip active" data-filter="all">All Dishes</button>
+          <button type="button" class="filter-chip" data-filter="starters">Starters</button>
+          <button type="button" class="filter-chip" data-filter="mains">Main Courses</button>
+          <button type="button" class="filter-chip" data-filter="desserts">Desserts</button>
+          <button type="button" class="filter-chip" data-filter="drinks">Drinks</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-dishes-grid">
+
+          <!-- Item 1: Greek Salad -->
+          <div class="menu-dish-card" data-category="starters">
+            <div class="dish-thumb-wrap">
+              <img src="images/salad.jpg" alt="Greek Lemon Salad" class="dish-thumb" loading="lazy">
+              <span class="diet-tag tag-veg">Vegetarian</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-head">
+                <h3 class="dish-name">Little Lemon Greek Salad</h3>
+                <span class="dish-price">$14.50</span>
+              </div>
+              <p class="dish-desc">Crisp cucumbers, vine-ripened tomatoes, Kalamata olives, feta cheese, and warm oregano lemon vinaigrette.</p>
+              <button type="button" class="btn-order" data-action="add-to-order" data-item="Little Lemon Greek Salad" data-price="$14.50">Add to Order +</button>
+            </div>
+          </div>
+
+          <!-- Item 2: Souvlaki Skewers -->
+          <div class="menu-dish-card" data-category="mains">
+            <div class="dish-thumb-wrap">
+              <img src="images/skewers.jpg" alt="Artisan Grilled Skewers" class="dish-thumb" loading="lazy">
+              <span class="diet-tag tag-chef">Chef's Pick</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-head">
+                <h3 class="dish-name">Grilled Souvlaki Skewers</h3>
+                <span class="dish-price">$18.95</span>
+              </div>
+              <p class="dish-desc">Tender chicken and bell peppers flame-grilled on rosemary skewers, served with garlic tzatziki and warm pita.</p>
+              <button type="button" class="btn-order" data-action="add-to-order" data-item="Grilled Souvlaki Skewers" data-price="$18.95">Add to Order +</button>
+            </div>
+          </div>
+
+          <!-- Item 3: Penne Pasta -->
+          <div class="menu-dish-card" data-category="mains">
+            <div class="dish-thumb-wrap">
+              <img src="images/banner.jpg" alt="Penne al Pomodoro" class="dish-thumb" loading="lazy">
+              <span class="diet-tag tag-popular">Popular</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-head">
+                <h3 class="dish-name">Penne al Pomodoro Fresco</h3>
+                <span class="dish-price">$16.50</span>
+              </div>
+              <p class="dish-desc">Bronze-die penne pasta tossed in San Marzano tomato marinara, fresh basil, cracked pepper, and aged parmesan.</p>
+              <button type="button" class="btn-order" data-action="add-to-order" data-item="Penne al Pomodoro Fresco" data-price="$16.50">Add to Order +</button>
+            </div>
+          </div>
+
+          <!-- Item 4: Lemon Meringue Tart -->
+          <div class="menu-dish-card" data-category="desserts">
+            <div class="dish-thumb-wrap">
+              <img src="images/dessert.jpg" alt="Artisan Lemon Tart" class="dish-thumb" loading="lazy">
+              <span class="diet-tag tag-sweet">Signature</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-head">
+                <h3 class="dish-name">Classic Lemon Meringue Tart</h3>
+                <span class="dish-price">$9.50</span>
+              </div>
+              <p class="dish-desc">Grandma’s recipe of silky lemon curd in a butter shortbread crust topped with toasted Italian meringue and mint.</p>
+              <button type="button" class="btn-order" data-action="add-to-order" data-item="Lemon Meringue Tart" data-price="$9.50">Add to Order +</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           4. SOCIAL PROOF: Guest Reviews & Testimonials
+           ================================================================== -->
+      <section class="testimonials-section" aria-label="Customer Reviews">
+        <div class="section-title-wrapper">
+          <span class="sub-heading">Loved by Chicago Diners</span>
+          <h2 class="section-main-heading">What Our Guests Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"The Mediterranean lemon salad and grilled skewers are out of this world. The patio ambiance feels like dining on the Greek coast!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">SP</div>
+              <div>
+                <strong class="reviewer-name">Sophia Palmer</strong>
+                <span class="reviewer-role">Verified Gourmet Diner</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"Little Lemon hosted our anniversary dinner. The online reservation was super smooth and the complimentary lemon tart made our night!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">DM</div>
+              <div>
+                <strong class="reviewer-name">David Miller</strong>
+                <span class="reviewer-role">Local Food Critic</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"The best pasta in town. You can taste the authenticity in every bite. Mario &amp; Adrian have created something truly extraordinary."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">EL</div>
+              <div>
+                <strong class="reviewer-name">Elena Rossi</strong>
+                <span class="reviewer-role">Neighborhood Regular</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           5. ABOUT US: The Story of Mario & Adrian
+           ================================================================== -->
+      <section class="about-section" id="about" aria-labelledby="about-heading">
+        <div class="about-grid">
+          <div class="about-text-column">
+            <span class="sub-heading">Our Heritage &amp; Passion</span>
+            <h2 id="about-heading" class="section-main-heading">Meet Mario &amp; Adrian</h2>
+            <p class="about-paragraph">
+              Founded in the heart of Chicago by brothers Mario and Adrian, Little Lemon began with a cherished collection 
+              of heirloom recipes handed down across three generations of Mediterranean culinary heritage.
+            </p>
+            <p class="about-paragraph">
+              Mario focuses on time-honored cooking methods—simmering sauces for hours and hand-rolling fresh pasta daily—while 
+              Adrian infuses contemporary culinary flair, sourcing organic citrus, farm-fresh herbs, and cold-pressed olive oils.
+            </p>
+            <div class="about-stats-row">
+              <div class="stat-box">
+                <span class="stat-number">12+</span>
+                <span class="stat-label">Years of Flavor</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Organic Citrus</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">30k+</span>
+                <span class="stat-label">Happy Guests</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image-column">
+            <div class="about-image-frame">
+              <img src="images/mario-adrian.jpg" alt="Co-founders Mario and Adrian smiling in kitchen" class="about-img" loading="lazy">
+              <div class="chef-caption">Mario &amp; Adrian &bull; Co-Founders &amp; Head Chefs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         6. FOOTER: Client Logo & Copywriting (Coursera 2-Column Requirement)
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        
+        <!-- Left Column: Small version of client logo -->
+        <div class="footer-col-left">
+          <div class="footer-logo-box">
+            <img src="images/logo-icon.svg" alt="Little Lemon Small Logo Icon" class="footer-logo">
+          </div>
+          <p class="footer-tagline">Authentic Mediterranean Cuisine &bull; Chicago, IL</p>
+        </div>
+
+        <!-- Right Column: Newsletter, Divider Line & Copyright -->
+        <div class="footer-col-right">
+          <!-- VIP Newsletter Form -->
+          <div class="newsletter-wrap">
+            <span class="newsletter-title">Subscribe for Weekend Secret Offers:</span>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Enter your email address..." required aria-label="Email for newsletter">
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+
+          <div class="footer-divider"></div>
+
+          <div class="footer-bottom-row">
+            <p class="copyright-text">Copyright Little Lemon &bull; All Rights Reserved</p>
+            <div class="footer-social-links">
+              <a href="#" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="TripAdvisor">TripAdvisor</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ====================================================================
+       7. INTERACTIVE MODAL: Table Reservation Dialog
+       ==================================================================== -->
+  <div id="reservation-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" data-action="close-modal" aria-label="Close Reservation Form">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge">Instant Booking</span>
+        <h2 id="modal-heading" class="modal-title">Reserve a Table at Little Lemon</h2>
+        <p class="modal-subtitle">Experience warm Mediterranean hospitality. Special requests are always welcomed.</p>
+      </div>
+
+      <form id="reservation-form" class="reservation-form">
+        <div class="form-grid">
+          
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="res-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="res-name" name="name" placeholder="e.g. Elena Rossi" required>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="res-email">Email Address <span class="required">*</span></label>
+            <input type="email" id="res-email" name="email" placeholder="elena@example.com" required>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="res-phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="res-phone" name="phone" placeholder="(312) 555-0199" required>
+          </div>
+
+          <!-- Number of Guests -->
+          <div class="form-group">
+            <label for="res-guests">Number of Guests <span class="required">*</span></label>
+            <select id="res-guests" name="guests" required>
+              <option value="1">1 Person (Solo Dining)</option>
+              <option value="2" selected>2 Persons (Table for 2)</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons (Family Table)</option>
+              <option value="5">5 Persons</option>
+              <option value="6">6+ Persons (Large Party)</option>
+            </select>
+          </div>
+
+          <!-- Date -->
+          <div class="form-group">
+            <label for="res-date">Reservation Date <span class="required">*</span></label>
+            <input type="date" id="res-date" name="date" required>
+          </div>
+
+          <!-- Time Slot -->
+          <div class="form-group">
+            <label for="res-time">Preferred Time <span class="required">*</span></label>
+            <select id="res-time" name="time" required>
+              <optgroup label="Lunch / Afternoon">
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+              </optgroup>
+              <optgroup label="Evening / Dinner">
+                <option value="5:30 PM">5:30 PM</option>
+                <option value="6:30 PM">6:30 PM</option>
+                <option value="7:30 PM" selected>7:30 PM (Peak)</option>
+                <option value="8:30 PM">8:30 PM</option>
+                <option value="9:30 PM">9:30 PM</option>
+              </optgroup>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Seating Preference -->
+        <div class="form-group full-width">
+          <label class="section-label">Seating Preference</label>
+          <div class="seating-radio-group">
+            <label class="radio-label">
+              <input type="radio" name="seating" value="Indoor Dining" checked>
+              <span>🏛 Indoor Dining</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="seating" value="Outdoor Garden Patio">
+              <span>🌿 Outdoor Patio</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="seating" value="Chef Counter">
+              <span>👨‍🍳 Chef Counter</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Occasion -->
+        <div class="form-group full-width">
+          <label for="res-occasion">Special Occasion</label>
+          <select id="res-occasion" name="occasion">
+            <option value="Casual Dining" selected>Casual Dining</option>
+            <option value="Birthday Celebration">Birthday Celebration</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Business Dinner">Business Dinner</option>
+          </select>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="form-group full-width">
+          <label for="res-notes">Dietary Needs or Special Requests</label>
+          <textarea id="res-notes" name="notes" rows="2" placeholder="Allergies, high-chair needed, quiet corner, etc. (Optional)"></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-action="close-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       8. CONFIRMATION RECEIPT MODAL
+       ==================================================================== -->
+  <div id="receipt-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-dialog receipt-dialog">
+      <button type="button" class="modal-close-btn" data-action="close-modal">&times;</button>
+      <div class="receipt-header">
+        <div class="receipt-checkmark">✓</div>
+        <h2>Reservation Confirmed!</h2>
+        <p>We are delighted to welcome you to Little Lemon.</p>
+      </div>
+
+      <div class="receipt-card">
+        <div class="receipt-row">
+          <span>Booking Reference:</span>
+          <strong id="receipt-ref">LL-839201</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Guest Name:</span>
+          <strong id="receipt-name">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Date &amp; Time:</span>
+          <strong id="receipt-datetime">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Party Details:</span>
+          <strong id="receipt-party">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Occasion:</span>
+          <strong id="receipt-occasion">-</strong>
+        </div>
+        <div class="receipt-footer-note">
+          A confirmation SMS and calendar invite have been dispatched to your email. See you soon!
+        </div>
+      </div>
+
+      <div class="modal-footer receipt-actions">
+        <button type="button" class="btn btn-primary" data-action="close-modal">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript File -->
+  <script src="script.js"></script>
+</body>
+</html>

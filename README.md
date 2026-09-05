@@ -1,62 +1,74 @@
-# 🏔️ Bumi Arema Tour & Travel
+# 🌟 Meta Front-End Developer - Portfolio Collection
 
-> Website travel dan agen perjalanan dari Kota Malang menuju destinasi wisata alam terpopuler di Jawa Timur (Gunung Bromo, Air Terjun Tumpak Sewu, dan Kawah Ijen).
-
-Proyek ini dibangun menggunakan **HTML5 semantik** dan **CSS3 modern (Flexbox & CSS Grid)** sebagai tugas akhir bersertifikasi pada kursus *HTML and CSS in depth* oleh Meta di Coursera.
+Koleksi proyek portofolio website untuk sertifikasi **HTML and CSS in depth** oleh Meta di Coursera.
 
 ---
 
-## 🌟 Fitur & Struktur Halaman
+## 📂 Daftar Proyek di Repositori Ini
 
-1. **Semantic HTML5 Layout:**
-   - `<header>`: Logo visual resmi brand Bumi Arema Tour & Travel.
-   - `<nav>`: Menu navigasi horizontal 4 tautan responsif (termasuk tautan ke Home).
-   - `<main>`:
-     - **Promotional Hero Banner:** Headline promosi diskon liburan, visual latar alam, dan tombol Call-to-Action (CTA).
-     - **3-Column Grid Destinations:** 3 kolom kartu destinasi unggulan (Gunung Bromo, Air Terjun Tumpak Sewu, dan Kawah Ijen) lengkap dengan foto, ulasan singkat, durasi, harga paket, dan tombol booking.
-     - **Value Proposition / Layanan Unggulan:** Fasilitas penjemputan stasiun/hotel, asuransi & tiket resmi, dan free dokumentasi.
-     - **Contact Banner:** Akses cepat kontak WhatsApp, email, dan alamat kantor.
-   - `<footer>`: Layout 2 kolom (kolom kiri: logo versi kecil & tagline, kolom kanan: informasi hak cipta & legalitas).
-
-2. **CSS3 Styling & Interactivity:**
-   - Menggunakan kombinasi **Flexbox** dan **CSS Grid**.
-   - Efek transisi halus dan pseudo-classes (`:hover`, `:active`, `:focus`, `:focus-visible`).
-   - Card lift hover effect & image zoom.
-   - Tipografi Google Font *Plus Jakarta Sans*.
-   - Desain sepenuhnya responsif (Desktop, Tablet, Mobile).
+### 1. 🏔️ [Bumi Arema Tour & Travel (Root / Malang Travel)](./index.html)
+Website travel dan agen perjalanan dari Kota Malang menuju destinasi wisata alam terbaik di Jawa Timur (Gunung Bromo, Air Terjun Tumpak Sewu, dan Kawah Ijen).
+- **Teknologi:** Semantic HTML5, CSS3 Grid & Flexbox, Google Fonts.
+- **Fitur:**
+  - Header dengan logo visual resmi.
+  - Horizontal Navigation Menu 4 link interaktif.
+  - Promotional Hero Banner dengan diskon spesial 25% dan CTA.
+  - 3-Column Destinations Layout (Bromo, Tumpak Sewu, Ijen) lengkap dengan foto, durasi, harga, dan tombol pesan.
+  - Footer 2 kolom: logo kecil di kiri dan informasi hak cipta di kanan.
+  - 100% responsif di desktop, tablet, dan ponsel.
 
 ---
 
-## 📁 Struktur Direktori
+### 2. 🍋 [Little Lemon Mediterranean Restaurant & Bar](./little-lemon-portfolio/index.html)
+Website restoran Mediterania modern "Little Lemon" dengan tata letak menu, reservasi, dan promosi hidangan spesial.
+- **Direktori:** `/little-lemon-portfolio`
+- **File Utama:**
+  - [`little-lemon-portfolio/index.html`](./little-lemon-portfolio/index.html)
+  - [`little-lemon-portfolio/style.css`](./little-lemon-portfolio/style.css)
+  - [`little-lemon-portfolio/script.js`](./little-lemon-portfolio/script.js)
+  - [`little-lemon-portfolio/images/`](./little-lemon-portfolio/images/)
+- **Fitur:**
+  - Logo restoran khas Little Lemon di header.
+  - Menu navigasi horizontal.
+  - Banner promosi sajian khas Mediterania.
+  - 3 kolom sajian unggulan (Greek Salad, Bruschetta, Lemon Dessert).
+  - Footer 2 kolom lengkap dengan hak cipta dan branding.
+
+---
+
+## 📁 Struktur Direktori Repositori
 
 ```text
-malang-travel-portfolio/
-├── index.html        # File markup utama (HTML5)
-├── style.css         # Stylesheet utama (CSS3 Grid & Flexbox)
-├── README.md         # Dokumentasi proyek
-└── images/           # Aset visual & foto destinasi
-    ├── logo.svg
-    ├── hero-promo.jpg
-    ├── bromo.jpg
-    ├── tumpak-sewu.jpg
-    └── kawah-ijen.jpg
+Bumi-Arema-Tour-Travel-Home/
+├── index.html                  # [Proyek 1] Halaman Utama Travel Malang - Jatim
+├── style.css                   # [Proyek 1] CSS Utama Travel
+├── images/                     # [Proyek 1] Foto Destinasi & Logo Travel
+│   ├── logo.svg
+│   ├── hero-promo.jpg
+│   ├── bromo.jpg
+│   ├── tumpak-sewu.jpg
+│   └── kawah-ijen.jpg
+├── little-lemon-portfolio/     # [Proyek 2] Little Lemon Restaurant
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── images/
+├── README.md                   # Dokumentasi lengkap repositori
+└── .gitignore
 ```
 
 ---
 
 ## 🚀 Cara Menjalankan Secara Lokal
 
-1. Clone repositori ini:
+1. Clone repositori:
    ```bash
-   git clone <URL_REPO_GITHUB_ANDA>
+   git clone https://github.com/Diptaaaa/Bumi-Arema-Tour-Travel-Home.git
    ```
-2. Buka folder proyek:
-   ```bash
-   cd malang-travel-portfolio
-   ```
-3. Buka file `index.html` langsung di browser Anda (klik ganda atau gunakan ekstensi *Live Server* di VS Code).
+2. Untuk membuka proyek **Bumi Arema Travel**, buka file `index.html` di browser.
+3. Untuk membuka proyek **Little Lemon**, masuk ke folder `little-lemon-portfolio/index.html` di browser.
 
 ---
 
 ## 📄 Lisensi & Hak Cipta
-© 2026 Muhammad Rafli Pradipta - Bumi Arema Tour & Travel. All rights reserved.
+© 2026 Muhammad Rafli Pradipta. Seluruh hak cipta dilindungi undang-undang.

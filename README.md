@@ -5,6 +5,7 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Responsive](https://img.shields.io/badge/Responsive-Mobile--First-success?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Muhammad%20Rafli%20Pradipta-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-rafli-pradipta-45b165288/)
 
 Website responsif modern agen perjalanan wisata Jawa Timur berbasis di Kota Malang, menyajikan paket perjalanan menuju destinasi alam kelas dunia (**Gunung Bromo**, **Air Terjun Tumpak Sewu**, dan **Kawah Ijen**).
 
@@ -74,7 +75,7 @@ Bumi-Arema-Tour-Travel---Landing-Page-Web-Portal-Wisata/
 
 **Muhammad Rafli Pradipta**
 - GitHub: [@Diptaaaa](https://github.com/Diptaaaa)
-- LinkedIn: [Profil LinkedIn](https://www.linkedin.com/)
+- LinkedIn: [Muhammad Rafli Pradipta](https://www.linkedin.com/in/muhammad-rafli-pradipta-45b165288/)
 
 ---
 
